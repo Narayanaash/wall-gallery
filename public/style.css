@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.loading {
+  text-align: center;
+  width: 100vw;
+  font-size: 2em;
+  color: grey;
+  font-family: monospace;
+}

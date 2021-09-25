@@ -5,7 +5,7 @@ import Card from "../../components/Card";
 import Loading from "../../components/Loading";
 import Modal from "../../components/modal";
 
-const url = "http://www.mocky.io/v2/5ecb5c353000008f00ddd5a0";
+const url = "https://www.mocky.io/v2/5ecb5c353000008f00ddd5a0";
 
 export default function Home() {
   const [images, setimages] = useState([]);

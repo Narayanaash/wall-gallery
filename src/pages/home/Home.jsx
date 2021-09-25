@@ -1,5 +1,5 @@
 import "./home.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import Card from "../../components/Card";
 import Loading from "../../components/Loading";
@@ -11,7 +11,8 @@ export default function Home() {
   const [images, setimages] = useState([]);
   const [isLoading, setisLoading] = useState(true);
   const [modalSrc, setmodalSrc] = useState("");
-  const [isModal, setisModal] = useState(false);
+  // const [isModal, setisModal] = useState(false);
+  const isModal = useMemo(() => Boolean(modalSrc), [modalSrc]);
 
   useEffect(() => {
     try {
@@ -24,7 +25,7 @@ export default function Home() {
     } catch (error) {
       alert("Sorry the service is not available at the moment!");
     }
-  }, [images]);
+  }, []);
 
   return (
     <div className="container">
@@ -33,16 +34,11 @@ export default function Home() {
           <Loading />
         ) : (
           images.map((image) => (
-            <Card
-              key={image.id}
-              image={image}
-              setisModal={setisModal}
-              setmodalSrc={setmodalSrc}
-            />
+            <Card key={image.id} image={image} setmodalSrc={setmodalSrc} />
           ))
         )}
       </div>
-      {isModal && <Modal source={modalSrc} setisModal={setisModal} />}
+      <Modal source={modalSrc} isModal={isModal} setmodalSrc={setmodalSrc} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 export default function Card({ image, setisModal, setmodalSrc }) {
   const handleClickZoom = () => {
-    setisModal(true);
+    setmodalSrc(image.urls.regular);
     setmodalSrc(image.urls.regular);
   };
   return (

@@ -1,5 +1,3 @@
-import Loading from "./Loading";
-
 export default function modal({ source, setisModal }) {
   return (
     <div className="modal" onClick={() => setisModal(false)}>

@@ -38,7 +38,6 @@ export default function Home() {
               image={image}
               setisModal={setisModal}
               setmodalSrc={setmodalSrc}
-              setisModal={setisModal}
             />
           ))
         )}
